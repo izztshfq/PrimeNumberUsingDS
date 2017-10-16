@@ -14,12 +14,11 @@ public class clientInterface {
 		int primerange, threadcount;
 		
 		Scanner sc= new Scanner(System.in); //Scanner function for client input
-		Socket s = new Socket("127.0.0.1",9999); // Define server host & port numnber
+		Socket s = new Socket("127.0.0.1",9990); // Define server host & port numnber
 		Scanner sc1= new Scanner(s.getInputStream()); //Scanner function to be sent to server as request
 		BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
 		
-//		PrintWriter out = new PrintWriter(s.getOutputStream(),true); //
-		
+
 		
 		
 		System.out.println("  ____       _                      _                  ");
@@ -47,10 +46,10 @@ public class clientInterface {
 		} 
 		threadcount = sc.nextInt();	
 		PrintStream p= new PrintStream(s.getOutputStream());
-		p.println(primerange);
+		p.println(primerange); //send input using PrintStream to server
 		p.println(threadcount);
 		
-		String executiontime = in.readLine();
+		String executiontime = in.readLine(); //get output variable from server using BufferedReader
 		String primeArrayNumber = in.readLine();
 		
 		System.out.printf("Prime Numbers : " + primeArrayNumber + "\n");
