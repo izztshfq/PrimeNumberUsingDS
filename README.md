@@ -8,10 +8,11 @@ The purpose of this assignment is to strengthen your understanding to speed up a
 The program can be speed up by distributing the finding effort using numbers of the process and/or thread, which can be located within a machine or spread to different machines. In this assignment, you need to demonstrate the use of client and server architecture, the multi threaded server means multiple process/thread can access the service at any one time, remote procedure call (RPC) or/and socket programming to involve methods that are located on different machines.
 
 ## Implementations
-A. Run the server program (PrimeJava_Server.jar) first, then run client (PrimeJava Client.jar).
+Run the server program (PrimeJava_Server.jar) first, then run client (PrimeJava Client.jar).
 
 	"java -jar <filename.jar>"  
 
 ## Details
 A.	Programming language: *Java*
+
 B.	Method of connection : "Sockets"
