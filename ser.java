@@ -30,7 +30,8 @@ public class ser extends Thread implements Runnable {
 		System.out.println(" |_|   |_|  |_|_| |_| |_|\\___|  \\___/ \\__,_| \\_/ \\__,_|");
 		System.out.println("                                           SERVER  v.0.1 ");
 		System.out.println("Ready for Connection");
-		ServerSocket socketServer = new ServerSocket(9999); //Specifying port number
+		
+		ServerSocket socketServer = new ServerSocket(9990); //Specifying port number
 		
 		while (true) {
 			
@@ -64,10 +65,12 @@ public class ser extends Thread implements Runnable {
 			String executionTimeString = Long.toString(executionTime); //converts long variable to string
 			
 			System.out.printf("Process completed in %s ms.\n", executionTimeString);
+			System.out.println("Ctrl + c to terminate server program.");
 			PrintStream p = new PrintStream(socketReq.getOutputStream());
 			
 			p.println(executionTimeString);
 			p.println(primeArray);
+			primeArray.clear(); //clear array list
 		}
 
 	}
@@ -97,8 +100,9 @@ public class ser extends Thread implements Runnable {
             
             
             if(isPrime(num)) {
-                System.out.println("Prime No Found: "+num+" Thread Name:"+Thread.currentThread().getName());
-                primeArray.add(num);
+            		primeArray.add(num);
+                System.out.println("Prime No. Found: "+num+" Thread Name:"+Thread.currentThread().getName());
+                
             }
             else {
             	PRIMECOUNT++;
